@@ -1,26 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Login />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Login from "@/pages/Login.vue"
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Login
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  margin: 0;
+  font-size: 12px;
+  line-height: 20px;
+  background-color: #F7F8FC;
+  font-family: Microsoft Yahei;
+  background-image: url("~@/assets/cas_bg.png");
+  overflow: hidden;
 }
 </style>
