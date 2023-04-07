@@ -1,65 +1,67 @@
 <template>
-    <div class="main">
-        <div class="login">
-            <div class="language">
-                <span>Language:</span>
-                <select>
-                    <option>简体中文</option>
-                    <option>English</option>
-                </select>
+    <div class="background">
+        <div class="main">
+            <div class="login">
+                <div class="language">
+                    <span>Language:</span>
+                    <select>
+                        <option>简体中文</option>
+                        <option>English</option>
+                    </select>
+                </div>
+
+                <div class="login-input">
+                    <div class="title">
+                        <img src="@/assets/cas_logo.png" />
+                        <h2>统一身份认证</h2>
+                    </div>
+                    <div class="warn" style="margin-top: 8px; margin-bottom: 6px;">您将登录的是：网上办事服务大厅</div>
+                    <input class="input" placeholder="用户名（本人学工号）" />
+                    <input class="input" />
+                    <div class="warn">
+                        <img src="@/assets/cas_prompt.png" />
+                        <span> 请输入值</span>
+                    </div>
+                </div>
+
+                <div class="login-submit">
+                    <input class="btn" value="登录" type="button" />
+                    <a class="help" href="https://myform.fudan.edu.cn/eservice/find_password">找回密码</a>
+                </div>
+
             </div>
 
-            <div class="login-input">
+            <div class="notice">
                 <div class="title">
-                    <img src="@/assets/cas_logo.png" />
-                    <h2>统一身份认证</h2>
+                    <img src="@/assets/cas_prefix_ico.png" />
+                    <span>&nbsp;&nbsp;通知公告</span>
                 </div>
-                <div class="warn" style="margin-top: 8px; margin-bottom: 6px;">您将登录的是：网上办事服务大厅</div>
-                <input class="input" placeholder="用户名（本人学工号）" />
-                <input class="input" />
-                <div class="warn">
-                    <img src="@/assets/cas_prompt.png" />
-                    <span> 请输入值</span>
-                </div>
+                <div class="line"></div>
+                <ul>
+                    <li>
+                        <div class="arrow"></div>
+                        <a href="http://www.xxb.fudan.edu.cn/29/7f/c2240a76159/page.htm">复旦大学邮箱封禁列表</a>
+                        <span>[2017-10-11]</span>
+                    </li>
+                </ul>
             </div>
 
-            <div class="login-submit">
-                <input class="btn" value="登录" type="button" />
-                <a class="help" href="https://myform.fudan.edu.cn/eservice/find_password">找回密码</a>
+            <div class="warn">
+                友情提示：失效时间为2小时
             </div>
-
         </div>
 
-        <div class="notice">
-            <div class="title">
-                <img src="@/assets/cas_prefix_ico.png" />
-                <span>&nbsp;&nbsp;通知公告</span>
+
+        <div class="footer">
+            <div class="link">
+                <span>友情链接： </span>
+                <a href="http://ehall.fudan.edu.cn">eHall | </a>
+                <a href="https://xxb.fudan.edu.cn/">Ecampus | </a>
+                <a href="https://mail.fudan.edu.cn/">Email | </a>
+                <a href="https://cloud.fudan.edu.cn/">Cloud@Fudan</a>
             </div>
-            <div class="line"></div>
-            <ul>
-                <li>
-                    <div class="arrow"></div>
-                    <a href="http://www.xxb.fudan.edu.cn/29/7f/c2240a76159/page.htm">复旦大学邮箱封禁列表</a>
-                    <span>[2017-10-11]</span>
-                </li>
-            </ul>
+            <div>Copyright © 复旦大学版权所有，&nbsp;联系我们： urp@fudan.edu.cn (86)021-65643207</div>
         </div>
-
-        <div class="warn">
-            友情提示：失效时间为2小时
-        </div>
-    </div>
-
-
-    <div class="footer">
-        <div class="link">
-            <span>友情链接： </span>
-            <a href="http://ehall.fudan.edu.cn">eHall | </a>
-            <a href="https://xxb.fudan.edu.cn/">Ecampus | </a>
-            <a href="https://mail.fudan.edu.cn/">Email | </a>
-            <a href="https://cloud.fudan.edu.cn/">Cloud@Fudan</a>
-        </div>
-        <div>Copyright © 复旦大学版权所有，&nbsp;联系我们： urp@fudan.edu.cn (86)021-65643207</div>
     </div>
 </template>
 
@@ -69,6 +71,10 @@ export default {
 }
 </script>
 <style scoped>
+.background {
+    height: 100%;
+    background-image: url("~@/assets/cas_bg.png");
+}
 .main {
     height: 425px;
     display: flex;
@@ -79,7 +85,7 @@ export default {
     transform: translate(-50%, -50%);
 }
 
-.main > .warn {
+.main>.warn {
     position: absolute;
     color: #bbbbbb;
     left: 34px;

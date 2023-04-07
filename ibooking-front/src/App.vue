@@ -1,26 +1,31 @@
 <template>
-  <Login />
+  <Management />
 </template>
 
 <script>
 import Login from "@/pages/Login.vue"
+import Management from "@/pages/Management.vue";
 
 export default {
   name: 'App',
   components: {
-    Login
+    Login,
+    Management
   }
 }
 </script>
 
 <style>
+html, body, #app {
+  height: 100%;
+  user-select: none;
+}
+
 body {
   margin: 0;
   font-size: 12px;
   line-height: 20px;
-  background-color: #F7F8FC;
   font-family: Microsoft Yahei;
-  background-image: url("~@/assets/cas_bg.png");
-  overflow: hidden;
+  overflow: scroll;
 }
 </style>
