@@ -2,7 +2,7 @@
     <el-container>
         <el-main>
             <el-row justify="center">
-                <el-col span="8">
+                <el-col :span="6">
                     <el-input placeholder="名称/编号" />
                 </el-col>
                 <el-col span="auto">
