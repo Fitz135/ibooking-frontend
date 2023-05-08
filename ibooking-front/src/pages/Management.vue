@@ -13,35 +13,60 @@
                 </div>
             </div>
             <div class="title">自习室管理系统</div>
-            <div class="searchbar">
-                <input />
-                <button>搜索</button>
-            </div>
-            <div class="search-history">
-                <span>最近搜索：</span>
-                <span class="item">入学复查</span>
-            </div>
-            <div class="main">
-                <div class="buttonbar">
-                    <button>新增自习室</button>
-                    <button>新增自习室</button>
-                    <button>新增自习室</button>
+
+            <el-container class="main">
+                <el-aside style="width: auto;">
+                    <el-menu default-active="1" class="el-menu-vertical-demo" style="height: 100%;">
+                        <el-menu-item class="menu-item" index="1">
+                            个人信息
+                        </el-menu-item>
+                        <el-menu-item class="menu-item" index="2">
+                            自习室
+                        </el-menu-item>
+                        <el-menu-item class="menu-item" index="3">
+                            预约
+                        </el-menu-item>
+                        <el-menu-item class="menu-item" index="4">
+                            预约信息
+                        </el-menu-item>
+                    </el-menu>
+                </el-aside>
+                <!-- <PersonalInfo></PersonalInfo> -->
+                <!-- <RoomInfo></RoomInfo> -->
+                <!-- <BookingInfo></BookingInfo> -->
+                <RoomDetail></RoomDetail>
+            </el-container>
+
+            <!-- <div class="main"> -->
+
+            <!-- <div >
+
                 </div>
-                <div class="roomlist">
-                    <RoomItem v-for="i in 10" :key="i"></RoomItem>
-                </div>
-            </div>
+                <PersonalInfo></PersonalInfo> -->
+            <!-- <div class="buttonbar">
+                    <button>新增自习室</button>
+                    <button>新增自习室</button>
+                    <button>新增自习室</button>
+                </div> -->
+
+            <!-- </div> -->
         </div>
     </div>
 </template>
 <script>
-import RoomItem from "@/components/RoomItem.vue"
-import LoginInfo from "@/components/LoginInfo.vue"
+import LoginInfo from "@/components/LoginInfo.vue";
+import RoomInfo from "./RoomInfo.vue";
+import PersonalInfo from "./PersonalInfo.vue";
+import BookingInfo from "./BookingInfo.vue";
+import RoomDetail from "./RoomDetail.vue"
 export default {
     name: 'Management',
     components: {
-        RoomItem,
-        LoginInfo
+        LoginInfo,
+        PersonalInfo,
+        RoomInfo,
+        BookingInfo,
+        RoomDetail
     }
 }
 </script>
@@ -53,6 +78,7 @@ export default {
 
 .container {
     width: 1061px;
+    height: 100%;
     margin: 0 auto;
 }
 
@@ -80,15 +106,6 @@ export default {
     color: #2E8CF0;
 }
 
-/* .line {
-    width: 1px;
-    height: 26px;
-    background: #e6e6f2;
-    opacity: .4;
-    display: inline-block;
-} */
-
-
 .title {
     font-size: 36px;
     line-height: 1.5;
@@ -98,69 +115,18 @@ export default {
     color: #fff;
 }
 
-.searchbar {
-    width: 585px;
-    height: 50px;
-    border-radius: 4px;
-    box-sizing: border-box;
-    background: #fff;
-    display: flex;
-    justify-content: end;
-}
-
-.searchbar input {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    border: none;
-    outline: none;
-    vertical-align: middle;
-    text-overflow: ellipsis;
-    max-width: 90%;
-    padding: 0;
-    padding-left: 12px;
-    font-size: 20px;
-    color: #000;
-    border-radius: 4px 0 0 4px;
-}
-
-.searchbar button {
-    width: 120px;
-    height: 100%;
-    cursor: pointer;
-    padding: 0;
-    border: none;
-    border-radius: 0 4px 4px 0;
-    font-size: 20px;
-    color: #fff;
-    background: #2E8CF0;
-}
-
-.search-history {
-    color: #fff;
-    font-size: 16px;
-    margin: 10px 0;
-}
-
-.search-history .item {
-    cursor: pointer;
-    margin-right: 20px;
-    max-width: 136px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.search-history .item:hover {
-    text-decoration: underline;
-}
-
 .main {
     background: #fff;
     -webkit-box-shadow: 0 4px 20px 0 rgba(226, 234, 242, .5);
     box-shadow: 0 4px 20px 0 rgba(226, 234, 242, .5);
     border-radius: 8px;
-    padding: 24px 40px;
+    overflow: hidden;
+    height: calc(100% - 194px - 12px);
+}
+
+.menu-item {
+    display: block;
+    text-align: center;
 }
 
 .buttonbar {
@@ -180,17 +146,5 @@ export default {
 
 .buttonbar button+button {
     margin-left: 10px;
-}
-
-.roomlist {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    row-gap: 24px;
-    column-gap: 60px;
-    margin-top: 24px;
-}
-
-.roomlist .room-item {
-    place-self: center;
 }
 </style>
